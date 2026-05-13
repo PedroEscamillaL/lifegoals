@@ -24,7 +24,7 @@ jobs:
 
       - name: build
         run: |
-          npm run build -- --output-path=docs
+          npm run build -- --output-path=docs --output-mode=static
 
       - name: list
         run:
