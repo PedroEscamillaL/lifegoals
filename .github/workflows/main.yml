@@ -33,3 +33,11 @@ jobs:
       - name: list browser
         run: |
            ls -la docs/browser
+
+       # LOGIN A DOCKER HUB
+      - name: docker login
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_USER }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
