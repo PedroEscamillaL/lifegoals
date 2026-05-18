@@ -1,0 +1,35 @@
+.main-container {
+  min-height: 100vh;
+  background: #43a5df;
+  padding: 40px;
+  color: white;
+}
+
+.menu {
+  margin-bottom: 80px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 55px;
+  margin-right: 40px;
+  font-weight: 300;
+}
+
+.about-box {
+  margin-top: 100px;
+}
+
+.about-box h1 {
+  font-size: 60px;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.about-box p {
+  font-size: 35px;
+  color: white;
+  margin: 15px 0;
+}

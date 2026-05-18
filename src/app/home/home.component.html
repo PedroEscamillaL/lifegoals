@@ -1,0 +1,57 @@
+<div class="container">
+
+  <nav>
+    <a routerLink="/">Home</a>
+    <a routerLink="/about">About</a>
+  </nav>
+
+  <div class="content">
+
+    <div class="left">
+
+      <div class="title-box">
+        Add a life goal
+      </div>
+
+      <p>
+        Use this form below to add a new life goal
+      </p>
+
+      <input
+        type="text"
+        placeholder="Add goal..."
+        [(ngModel)]="goalName"
+      >
+
+      <button (click)="addGoal()">
+        add an item
+      </button>
+
+    </div>
+
+    <div class="right">
+
+      <div class="title-box">
+        Your goals list ({{ goals.length }})
+      </div>
+
+      <div
+        class="goal-card"
+        *ngFor="let goal of goals"
+      >
+
+        <button (click)="deleteGoal(goal.id)">
+          delete
+        </button>
+
+        <h2>
+          {{ goal.name }}
+        </h2>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
