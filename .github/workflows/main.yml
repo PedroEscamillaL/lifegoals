@@ -64,7 +64,7 @@ jobs:
         env:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
         run: |
-          docker push $DOCKER_USER/lifegoals:${{ github.sha }}
+          docker push $DOCKER_USER/lifegoals:latest
 
 
       - name: Trigger Render Deploy
