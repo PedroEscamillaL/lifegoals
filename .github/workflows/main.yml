@@ -57,7 +57,7 @@ jobs:
         env:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
         run: |
-          docker commit --change "ENV MODEL_NAME http_base" http_base $DOCKER_USER/lifegoals:${{ github.sha }}
+          docker commit --change "ENV MODEL_NAME http_base" http_base $DOCKER_USER/lifegoals:latest
 
       # HACER PUSH A DOCKER HUB
       - name: Docker Push
@@ -65,3 +65,7 @@ jobs:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
         run: |
           docker push $DOCKER_USER/lifegoals:${{ github.sha }}
+
+
+      - name: Trigger Render Deploy
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
