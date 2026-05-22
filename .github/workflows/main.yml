@@ -46,6 +46,17 @@ jobs:
       - name: Download and run the Docker base image
         run: |
           docker run -d --name http_base httpd
+     
+          docker exec http_base sh -c "
+            echo '
+            LoadModule rewrite_module modules/mod_rewrite.so
+
+            <Directory \"/usr/local/apache2/htdocs\">
+                AllowOverride All
+                Require all granted
+            </Directory>
+            ' >> /usr/local/apache2/conf/httpd.conf
+            "
 
       # COPIAR APP ANGULAR AL CONTENEDOR
       - name: copy model to the Docker image
