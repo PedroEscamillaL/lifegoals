@@ -51,7 +51,7 @@ jobs:
       - name: copy model to the Docker image
         run: |
           docker cp docs/browser/. http_base:/usr/local/apache2/htdocs
-
+          docker cp src/.htaccess http_base:/usr/local/apache2/htdocs/.htaccess
       # CREAR IMAGEN PERSONALIZADA
       - name: Build the custom Docker image
         env:
